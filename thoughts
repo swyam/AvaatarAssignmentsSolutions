@@ -1,0 +1,16 @@
+## Problems and Solutions
+
+### Problem 1
+1. **Initial Approach**: Attempted to use the diffusers library from "https://huggingface.co/jbilcke-hf/sdxl-panorama". It worked, but the issue of generating seamless tiles persisted.
+2. **Research**: Explored various documents and approaches using prompts and LoRA but could not solve the tiling issue effectively.
+3. **Solution**: Discovered the asymmetric tiling module, which addressed the seamless tiling problem. Due to a lack of documentation for use with diffusers, switched to using AUTOMATIC1111.
+4. **Implementation**: Integrated the asymmetric tiling module, improving seamless tiling as required. Tested with different prompts and saved results in the folder “../without_ControlNet_Problem1”.
+5. **Limitations**: Due to time and compute constraints, did not experiment with different VAEs, base models, or deeper exploration of ControlNet and image resolution.
+
+### Problem 2
+1. **ControlNet Integration**: Added a module for executing ControlNet, specifically for depth.
+2. **Adjustments**: Tweaked denoising, CFG, and other parameters to improve image quality, considering the depth map provided in the problem statement. Results are saved in “../With_ControlNet_Problem2”.
+3. **Seamlessness**: Ensured seamless meeting of the panorama image.
+
+## Challenges
+1. **Compute Limitations**: Worked on Google Colab, which has limited compute units and often crashes after a few minutes of work.
